@@ -11,7 +11,7 @@
       },
     "content_scripts": [ 
         { 
-            "js": [ "jquery.js", "jquery-ui.js", "scripts.js" ], 
+            "js": [ "jquery.js", "scripts.js", "flatpickr.js" ], 
             "matches": [ "http://*/*", "https://*/*"] 
         }
     ]

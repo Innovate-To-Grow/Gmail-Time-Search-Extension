@@ -2,16 +2,26 @@
 <head>
 	<title>Gmail Date Filter</title>
     <script src="jquery.js"></script>
-    <script src="jquery-ui.js"></script>
     <script src="scripts.js"></script>
-    <link rel="stylesheet" href="jquery-ui.css">
     <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="flatpickr.min.css">
+    <script src="flatpickr.js"></script>
 </head>
+
 <body>
-    <h3>Before Date: <input type="text" id="beforeDate"></h3>
-    <h3>After Date: <input type="text" id="afterDate"></h3>
-    <button id="addrange">Add Time Range</button>
-    <div id="savedDate"></div>
-    <button id="copybutton">Copy Me</button>
+    <div class="form__group field">
+        <input type="input" class="form__field afterDate flatpickr" placeholder="After Date:" name="After Date:" id='After Date:' required />
+        <label for="After Date:" class="form__label">After Date:</label>
+    </div>
+    <div class="form__group field">
+        <input style="margin-bottom: 5px;" type="input" class="form__field beforeDate flatpickr" placeholder="Before Date:" name="Before Date:" id='Before Date:' required />
+        <label for="Before Date:" class="form__label">Before Date:</label>
+    </div>
+    <button style="margin-bottom: 5px;" class="btn draw-border" id="addrange">Add Time Range</button>
+    <div style="font-size: 60%" id="savedDate"></div>
+    <button class="btn draw-border" id="copybutton">Copy For Gmail</button>
+    <button style="margin-bottom: 5px;" class="btn draw-border" id="pastebutton">Paste For Gmail</button>
+    <button class="btn draw-border" id="resetbutton">Reset Values</button>
 </body>
 </html>

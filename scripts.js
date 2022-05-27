@@ -1,16 +1,17 @@
 $( function() {
     var formatted_date = "";
-    $("#beforeDate").datepicker();
-    $("#afterDate").datepicker();
+    flatpickr(".beforeDate");
+    flatpickr(".afterDate");
     
     $("#addrange").on("click", function(){
-        var before_date = $("#beforeDate").datepicker("getDate"); //to store it in a variable.
-        var after_date = $("#afterDate").datepicker("getDate"); //to store it in a variable.
-        if (before_date != null && after_date != null){
-            formatted_date = "(after:" + after_date.getFullYear() + "-" + (after_date.getMonth()+1) + "-" + after_date.getDate() + " before:"+ before_date.getFullYear() + "-" + (before_date.getMonth()+1) + "-" + before_date.getDate() + ")";
+        var before_date_text = document.getElementsByClassName("beforeDate")[0].value; //YYYY-MM-DD.
+        var after_date_text = document.getElementsByClassName("afterDate")[0].value; //YYYY-MM-DD.
+        
+        if (before_date_text != "" && after_date_text  != ""){
+            formatted_date = "(after:" + after_date_text + " before:"+ before_date_text + ")";
             document.getElementById("savedDate").innerHTML += "<p>" + formatted_date + "</p>";
-            $('#beforeDate').datepicker('setDate', null);
-            $('#afterDate').datepicker('setDate', null);
+            document.getElementsByClassName("beforeDate")[0].value = "";
+            document.getElementsByClassName("afterDate")[0].value = "";
         }else{
             alert("input box is empty");
         }
@@ -32,6 +33,10 @@ $( function() {
             alert("nothing to copy, add time range.");
         }
         copyTextToClipboard(copy_date);
+    });
+
+    $("#resetbutton").on("click", function(){
+        $( "p" ).remove();
     });
     
 } );
