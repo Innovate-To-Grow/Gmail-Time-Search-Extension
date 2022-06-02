@@ -34,11 +34,43 @@ $( function() {
         }
         copyTextToClipboard(copy_date);
     });
-
-    $("#resetbutton").on("click", function(){
-        $( "p" ).remove();
-    });
     
+
+    var checkList = document.getElementById('list1');
+    checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
+    if (checkList.classList.contains('visible'))
+        checkList.classList.remove('visible');
+    else
+        checkList.classList.add('visible');
+    }
+
+    $('input[name="ccinput"]').hide();
+    $('input[name="subinput"]').hide();
+    $('input[name="labinput"]').hide();
+    //show it when the checkbox is clicked
+    $('input[name="cc"]').on('click', function () {
+        if ($(this).prop('checked')) {
+            $('input[name="ccinput"]').fadeIn();
+        } else {
+            $('input[name="ccinput"]').hide();
+        }
+    });
+    $('input[name="subject"]').on('click', function () {
+        if ($(this).prop('checked')) {
+            $('input[name="subinput"]').fadeIn();
+        } else {
+            $('input[name="subinput"]').hide();
+        }
+    });
+    $('input[name="label"]').on('click', function () {
+        if ($(this).prop('checked')) {
+            $('input[name="labinput"]').fadeIn();
+        } else {
+            $('input[name="labinput"]').hide();
+        }
+    });
+
+
 } );
 
 function copyTextToClipboard(text) {

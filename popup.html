@@ -4,24 +4,53 @@
     <script src="jquery.js"></script>
     <script src="scripts.js"></script>
     <link rel="stylesheet" href="styles.css">
-
     <link rel="stylesheet" href="flatpickr.min.css">
     <script src="flatpickr.js"></script>
 </head>
 
 <body>
-    <div class="form__group field">
-        <input type="input" class="form__field afterDate flatpickr" placeholder="After Date:" name="After Date:" id='After Date:' required />
-        <label for="After Date:" class="form__label">After Date:</label>
+    <table>
+        <tr>
+            <td><input type="text" class="from" placeholder="From:" required=""></td>
+            <td><input type="text" class="to" placeholder="To:" required=""></td>
+            <td style="position:relative;" id="list1" class="dropdown-check-list" tabindex="100">
+                <span class="anchor">Search By:</span>
+                <ul class="items">
+                  <li><input name="cc" style="width:10%; display:unset" class="cc" type="checkbox" />cc</li>
+                  <li><input name="subject" style="width:10%; display:unset" class="Subject" type="checkbox" />subject</li>
+                  <li><input name="label" style="width:10%; display:unset" class="Label" type="checkbox" />label</li>
+                  <li><input style="width:10%; display:unset" class="Has attachment" type="checkbox" />has attachment</li>
+                </ul>
+                
+            </td>
+            <td style="position:absolute; margin-top:2px"><input type="text" name="ccinput" class="cc" placeholder="CC:" required=""></td>
+            <td style="position:absolute; margin-top:35px"><input type="text" name="subinput" class="Subject" placeholder="Subject:" required=""></td>
+            <td style="position:absolute; margin-top:67px"><input type="text" name="labinput" class="Label" placeholder="Label:" required=""></td>
+        </tr>
+        <tr>
+            <td><input type="text" class="afterDate flatpickr" placeholder="After Date:" required=""></td>
+            <td><input type="text" class="beforeDate flatpickr" placeholder="Before Date:" required=""></td>
+        </tr>
+     </table>
+                  
+    <!-- <div style="margin-left: 50%;">
+        <input  type="text" class="afterDate flatpickr" placeholder="After Date:" required="">
     </div>
-    <div class="form__group field">
-        <input style="margin-bottom: 5px;" type="input" class="form__field beforeDate flatpickr" placeholder="Before Date:" name="Before Date:" id='Before Date:' required />
-        <label for="Before Date:" class="form__label">Before Date:</label>
-    </div>
-    <button style="margin-bottom: 5px;" class="btn draw-border" id="addrange">Add Time Range</button>
+    <div style="margin-right:50%; ">
+        <input type="text" class="beforeDate flatpickr" placeholder="Before Date:" required="">
+    </div> -->
+    <table>
+        <tr>
+            <td>
+                <button id="addrange">Add Filter</button>
+                
+            </td>
+            <td>
+                <button id="copybutton">Copy Filters</button>
+            </td>
+        </tr>
+    </table>
     <div style="font-size: 60%" id="savedDate"></div>
-    <button class="btn draw-border" id="copybutton">Copy For Gmail</button>
-    <button style="margin-bottom: 5px;" class="btn draw-border" id="pastebutton">Paste For Gmail</button>
-    <button class="btn draw-border" id="resetbutton">Reset Values</button>
+    
 </body>
 </html>
