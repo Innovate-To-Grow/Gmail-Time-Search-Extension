@@ -16,29 +16,22 @@
             <td style="position:relative;" id="list1" class="dropdown-check-list" tabindex="100">
                 <span class="anchor">Search By:</span>
                 <ul class="items">
-                  <li><input name="cc" style="width:10%; display:unset" class="cc" type="checkbox" />cc</li>
-                  <li><input name="subject" style="width:10%; display:unset" class="Subject" type="checkbox" />subject</li>
-                  <li><input name="label" style="width:10%; display:unset" class="Label" type="checkbox" />label</li>
-                  <li><input style="width:10%; display:unset" class="Has attachment" type="checkbox" />has attachment</li>
+                  <li><input name="cc" style="width:10%; display:unset" id="cc" class="cc" type="checkbox" />cc</li>
+                  <li><input name="subject" style="width:10%; display:unset" id = "subject" class="subject" type="checkbox" />subject</li>
+                  <li><input name="label" style="width:10%; display:unset" id="label" class="label" type="checkbox" />label</li>
+                  <li><input name="attachment" style="width:10%; display:unset" id="attachment" type="checkbox" />has attachment</li>
                 </ul>
                 
             </td>
-            <td style="position:absolute; margin-top:2px"><input type="text" name="ccinput" class="cc" placeholder="CC:" required=""></td>
-            <td style="position:absolute; margin-top:35px"><input type="text" name="subinput" class="Subject" placeholder="Subject:" required=""></td>
-            <td style="position:absolute; margin-top:67px"><input type="text" name="labinput" class="Label" placeholder="Label:" required=""></td>
+            <td style="position:absolute; margin-top:2px"><input type="text" name="ccinput" class="ccinput" placeholder="CC:" required=""></td>
+            <td style="position:absolute; margin-top:35px"><input type="text" name="subinput" class="subinput" placeholder="Subject:" required=""></td>
+            <td style="position:absolute; margin-top:67px"><input type="text" name="labinput" class="labinput" placeholder="Label:" required=""></td>
         </tr>
         <tr>
             <td><input type="text" class="afterDate flatpickr" placeholder="After Date:" required=""></td>
             <td><input type="text" class="beforeDate flatpickr" placeholder="Before Date:" required=""></td>
         </tr>
      </table>
-                  
-    <!-- <div style="margin-left: 50%;">
-        <input  type="text" class="afterDate flatpickr" placeholder="After Date:" required="">
-    </div>
-    <div style="margin-right:50%; ">
-        <input type="text" class="beforeDate flatpickr" placeholder="Before Date:" required="">
-    </div> -->
     <table>
         <tr>
             <td>
@@ -50,7 +43,7 @@
             </td>
         </tr>
     </table>
-    <div style="font-size: 60%" id="savedDate"></div>
+    <div style="font-size: 40%; width:65%" id="savedDate"></div>
     
 </body>
 </html>
