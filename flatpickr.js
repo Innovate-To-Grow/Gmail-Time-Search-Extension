@@ -21,7 +21,7 @@
     var t = ["onChange", "onClose", "onDayCreate", "onDestroy", "onKeyDown", "onMonthChange", "onOpen", "onParseConfig", "onReady", "onValueUpdate", "onYearChange", "onPreCalendarPosition"],
         a = {
             _disable: [],
-            allowInput: !1,
+            allowInput: !0,
             allowInvalidPreload: !1,
             altFormat: "F j, Y",
             altInput: !1,
