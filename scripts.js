@@ -103,7 +103,24 @@ $( function() {
         }
         copyTextToClipboard(copy_date);
     });
+
+    $("#saveButton").on("click", function() {
+        var savedDate = document.getElementById("savedDate").innerHTML;
+        localStorage.setItem("savedDate", savedDate);
+        alert("Filters saved successfully.");
+      });
     
+      // Load button click event handler
+      $("#loadButton").on("click", function() {
+        var savedDate = localStorage.getItem("savedDate");
+        if (savedDate) {
+          document.getElementById("savedDate").innerHTML = savedDate;
+          alert("Filters loaded successfully.");
+        } else {
+          alert("No saved filters found.");
+        }
+      });
+
 
     var checkList = document.getElementById('list1');
     checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
@@ -174,8 +191,3 @@ function copyTextToClipboard(text) {
     //other elements can get access to this.
     document.body.removeChild(copyFrom);
   }
-
-
-
-
-  
