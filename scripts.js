@@ -105,21 +105,35 @@ $( function() {
     });
 
     $("#saveButton").on("click", function() {
-        var savedDate = document.getElementById("savedDate").innerHTML;
-        localStorage.setItem("savedDate", savedDate);
-        alert("Filters saved successfully.");
-      });
-    
-      // Load button click event handler
-      $("#loadButton").on("click", function() {
-        var savedDate = localStorage.getItem("savedDate");
-        if (savedDate) {
-          document.getElementById("savedDate").innerHTML = savedDate;
-          alert("Filters loaded successfully.");
+        var filterName = prompt("Enter a name for the filter:");
+        if (filterName !== null && filterName.trim() !== "") {
+          var savedDate = document.getElementById("savedDate").innerHTML;
+          localStorage.setItem(filterName, savedDate);
+          showNotification("Filter '" + filterName + "' saved successfully.");
         } else {
-          alert("No saved filters found.");
+          showNotification("Please enter a valid filter name.");
         }
       });
+    
+      $("#loadButton").on("click", function() {
+        var filterName = prompt("Enter the name of the filter to load:");
+        if (filterName !== null && filterName.trim() !== "") {
+          var savedDate = localStorage.getItem(filterName);
+          if (savedDate !== null) {
+            document.getElementById("savedDate").innerHTML = savedDate;
+            showNotification("Filter '" + filterName + "' loaded successfully.");
+          } else {
+            showNotification("No saved filter found with the name '" + filterName + "'.");
+          }
+        } else {
+          showNotification("Please enter a valid filter name.");
+        }
+      });
+    
+      // Function to show notification
+      function showNotification(message) {
+        alert(message);
+      }
 
 
     var checkList = document.getElementById('list1');
