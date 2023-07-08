@@ -17,7 +17,7 @@
                 <span class="anchor">Search By:</span>
                 <ul class="items">
                   <li><input name="cc" style="width:10%; display:unset" id="cc" class="cc" type="checkbox" />cc</li>
-                  <li><input name="subject" style="width:10%; display:unset" id = "subject" class="subject" type="checkbox" />subject</li>
+                  <li><input name="subject" style="width:10%; display:unset" id="subject" class="subject" type="checkbox" />subject</li>
                   <li><input name="label" style="width:10%; display:unset" id="label" class="label" type="checkbox" />label</li>
                   <li><input name="attachment" style="width:10%; display:unset" id="attachment" type="checkbox" />has attachment</li>
                 </ul>
@@ -30,6 +30,12 @@
         <tr>
             <td><input type="text" class="afterDate flatpickr" placeholder="After Date:" required=""></td>
             <td><input type="text" class="beforeDate flatpickr" placeholder="Before Date:" required=""></td>
+            <td colspan="2">
+                <label for="utc_hours">UTC Hours:</label>
+                <input type="number" id="utc_hours" name="utc_hours" min="0" max="23" placeholder="Hours" required>
+                <label for="utc_minutes">UTC Minutes:</label>
+                <input type="number" id="utc_minutes" name="utc_minutes" min="0" max="59" placeholder="Minutes" required>
+            </td>
         </tr>
      </table>
     <table>
